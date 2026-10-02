@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SEO Listing Hub - create and optimize e-commerce product listings with SEO titles, descriptions, bullet points, keywords and listing audits.">
+  <meta name="theme-color" content="#0b1020">
+  <title>SEO Listing Hub | E-commerce SEO Toolkit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">E-COMMERCE SEO TOOLKIT</span>
+        <h1>SEO Listing Hub</h1>
+        <p>Create, analyze and optimize marketplace listings faster.</p>
+      </div>
+      <button id="clearBtn" class="btn btn-ghost" type="button">Clear All</button>
+    </header>
+
+    <main>
+      <section class="card">
+        <div class="section-heading">
+          <div>
+            <span class="step">01</span>
+            <h2>Product Information</h2>
+          </div>
+          <span class="hint">Fill in the details you already have</span>
+        </div>
+
+        <div class="grid">
+          <label>Product Name<input id="productName" placeholder="e.g. Stainless Steel Water Bottle"></label>
+          <label>Brand<input id="brand" placeholder="e.g. Milton"></label>
+          <label>Category<input id="category" placeholder="e.g. Water Bottles"></label>
+          <label>Marketplace
+            <select id="marketplace">
+              <option>Amazon</option>
+              <option>eBay</option>
+              <option>Shopify</option>
+              <option>TikTok Shop</option>
+              <option>Temu</option>
+              <option>Generic</option>
+            </select>
+          </label>
+          <label>Material<input id="material" placeholder="e.g. Stainless Steel"></label>
+          <label>Size / Colour<input id="variant" placeholder="e.g. 1 Litre / Black"></label>
+          <label class="full">Main Features<textarea id="features" rows="3" placeholder="Leakproof, reusable, lightweight, double-wall insulation"></textarea></label>
+          <label class="full">Important Keywords<textarea id="keywords" rows="3" placeholder="water bottle, insulated bottle, reusable bottle, sports bottle"></textarea></label>
+          <label class="full">Existing Listing (optional)<textarea id="existingListing" rows="4" placeholder="Paste your current title, description or bullets here for an audit"></textarea></label>
+        </div>
+
+        <button id="generateBtn" class="btn btn-primary" type="button">Generate SEO Listing</button>
+      </section>
+
+      <section id="results" class="results hidden">
+        <div class="section-heading">
+          <div>
+            <span class="step">02</span>
+            <h2>Generated Listing</h2>
+          </div>
+          <button id="copyAllBtn" class="btn btn-secondary" type="button">Copy All</button>
+        </div>
+
+        <article class="output-card">
+          <div class="output-head"><h3>SEO Title</h3><span id="titleCount" class="count"></span></div>
+          <div id="seoTitle" class="output"></div>
+          <button class="copy-btn" data-copy="seoTitle">Copy Title</button>
+        </article>
+
+        <article class="output-card">
+          <div class="output-head"><h3>SEO Description</h3></div>
+          <div id="seoDescription" class="output output-text"></div>
+          <button class="copy-btn" data-copy="seoDescription">Copy Description</button>
+        </article>
+
+        <article class="output-card">
+          <div class="output-head"><h3>Bullet Points</h3></div>
+          <div id="bulletPoints" class="output bullets"></div>
+          <button class="copy-btn" data-copy="bulletPoints">Copy Bullets</button>
+        </article>
+
+        <article class="output-card">
+          <div class="output-head"><h3>Search Keywords</h3></div>
+          <div id="searchKeywords" class="output"></div>
+          <button class="copy-btn" data-copy="searchKeywords">Copy Keywords</button>
+        </article>
+
+        <article class="output-card">
+          <div class="output-head"><h3>Keyword Analysis</h3></div>
+          <div class="table-wrap"><table><thead><tr><th>Keyword</th><th>Words</th><th>In Title</th><th>In Description</th><th>Status</th></tr></thead><tbody id="keywordTable"></tbody></table></div>
+        </article>
+
+        <article id="auditCard" class="output-card hidden">
+          <div class="output-head"><h3>Existing Listing Audit</h3></div>
+          <div id="audit"></div>
+        </article>
+      </section>
+
+      <section class="card">
+        <div class="section-heading">
+          <div>
+            <span class="step">03</span>
+            <h2>Existing Listing Optimizer</h2>
+          </div>
+          <span class="hint">Quickly identify common SEO gaps</span>
+        </div>
+        <textarea id="optimizerInput" rows="7" placeholder="Paste an existing product listing here..."></textarea>
+        <div class="optimizer-actions">
+          <button id="auditBtn" class="btn btn-primary" type="button">Analyze Listing</button>
+          <button id="copyAuditBtn" class="btn btn-secondary" type="button">Copy Audit</button>
+        </div>
+        <div id="optimizerResult" class="audit-box muted">Your audit will appear here.</div>
+      </section>
+    </main>
+
+    <footer>
+      <span>SEO Listing Hub</span>
+      <span>Browser-based • No API key required</span>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
